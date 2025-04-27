@@ -49,7 +49,6 @@ resource "aws_route_table_association" "lastminutefix_route_table_association" {
 
 resource "aws_security_group" "lastminutefix_cluster_sg" {
     vpc_id = aws_vpc.lastminutefix_vpc.id
-
     egress {
         from_port   = 0
         to_port     = 0
@@ -63,17 +62,17 @@ resource "aws_security_group" "lastminutefix_cluster_sg" {
 
 resource "aws_security_group" "lastminutefix_node_sg" {
     vpc_id = aws_vpc.lastminutefix_vpc.id
-    ingress = {
-        from_port = 0
-        to_port = 0
-        protocol = "-1"
+    ingress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1"
         cidr_blocks = ["0.0.0.0/0"]
     }
 
-    egress = {
-        from_port = 0
-        to_port = 0
-        protocol = "-1"
+    egress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1"
         cidr_blocks = ["0.0.0.0/0"]
     }
     tags = {

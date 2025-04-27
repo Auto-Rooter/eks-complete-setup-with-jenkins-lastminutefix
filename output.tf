@@ -1,9 +1,9 @@
 output "cluster_id" {
-    value = aws_eks_cluster.lastminutefix_cluster.id
+    value = aws_eks_cluster.lastminutefix.id
 }
 
 output "node_group_id" {
-    value = aws_eks_node_group.lastminutefix_node_group.id
+    value = aws_eks_node_group.lastminutefix.id
 }
 
 output "vpc_id" {
