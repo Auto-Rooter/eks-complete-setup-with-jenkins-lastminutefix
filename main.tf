@@ -170,8 +170,8 @@ resource "aws_iam_role_policy_attachment" "lasteminutefix_node_group_registry_po
     role = aws_iam_role.lastminutefix_node_group_role.name
     policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 }
-
-resource "aws_iam_role_policy_attachment" "lasteminutefix_node_group_ebs_policy" {
-    role = aws_iam_role.lastminutefix_node_group_role.name
-    policy_arn = "arn:aws:iam::aws:policy/AmazonEBSCSIDriverPolicy"
-}
+# AWS manages the driver and its permissions internally.
+# resource "aws_iam_role_policy_attachment" "lastminutefix_node_group_ebs_policy" {
+#   role       = aws_iam_role.lastminutefix_node_group_role.name
+#   policy_arn = "arn:aws:iam::aws:policy/AmazonEBSCSIDriverPolicy"
+# }
